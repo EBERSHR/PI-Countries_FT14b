@@ -12,6 +12,20 @@ router.get("/", (req, res) => {
     res.send("Hola Proyecto!");
 });
 
+router.get("/countries/:idPais", (req, res) => {
+    res.send("countries : idPais");
+});
+
+router.get("/counties/?name", (req, res) => {
+    res.send("Hola Proyecto!");
+});
+
+
+
+router.post('/activities', (req, res) => {
+    res.send("en el get de activities");
+});
+
 router.use('/activities', activitiesRouter);
 
 module.exports = router;

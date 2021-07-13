@@ -5,7 +5,7 @@ const { Country, Activity } = require('./src/db');
 // const Country = require('./src/models/Country.js');
 
 
-https://vimeo.com/573149512/fec1765cd7
+//https://vimeo.com/573149512/fec1765cd7
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
