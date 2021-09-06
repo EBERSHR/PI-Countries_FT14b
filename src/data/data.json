@@ -1,0 +1,998 @@
+﻿// https://firebase.google.com/docs/database/web/read-and-write#web-v9
+var inv = [        {
+            "id": "1",
+            "DESCRIPICION": "COMBO LAGUAN CON PEDESTAL AZUL CIELO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "COMBO",
+            " COSTO ": " $ 286,143.46 ",
+            " PRECIO VENTA ": " $ 331,000.00 ",
+            " DESCUENTO 1 ": " $ 340,000.00 ",
+            "COLOR": "AZUL",
+            "CATEGORÍA": "SANITARIOS"
+        },
+        {
+            "id": "2",
+            "DESCRIPICION": "COMBO MANANTIAL CON PEDESTAL BLANCO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "COMBO",
+            " COSTO ": " $ 334,862.61 ",
+            " PRECIO VENTA ": " $ 400,000.00 ",
+            " DESCUENTO 1 ": " $ 390,000.00 ",
+            "COLOR": "BLANCO",
+            "CATEGORÍA": "SANITARIOS",
+            "NOTAS": "1 UNIDAD EN EXHIBICIÓN TIENDA MILANO"
+        },
+        {
+            "id": "3",
+            "DESCRIPICION": "PARED FACHADA STA. MARIA",
+            "PRESENTACIÓN": "CAJA",
+            "MEDIDA/UNID.": "30X45 ",
+            " COSTO ": " $ 36,409.43 ",
+            "COLOR": "MATE MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 9 UNIDADES"
+        },
+        {
+            "id": "4",
+            "DESCRIPICION": "PORCELANATO ATLANTA ",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA",
+            "MEDIDA/UNID.": "56.6X56.6 ",
+            " COSTO ": " $ 60,370.00 ",
+            "COLOR": "MARFIL",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "X ENTREGAR F 0425 + 28 PEGA PORC + LECH X5 BEIGE CORONA"
+        },
+        {
+            "id": "5",
+            "DESCRIPICION": "MEGAPEGA CERAMICO INTERIOR",
+            "MARCA": "MEGAPEGA",
+            "PRESENTACIÓN": "BULTO 25K",
+            " COSTO ": " $ 11,540.00 ",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "6",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "BLANCO ANTIGUO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "7",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "8",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "BEIGE",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "9",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "SUPER BLANCO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "10",
+            "DESCRIPICION": "CONCOLOR JE ANTIHONGOS - LECHADA",
+            "MARCA": "CONCOLOR",
+            "PRESENTACIÓN": "CAJA 2K",
+            " COSTO ": " $ 9,160.00 ",
+            "COLOR": "SUPER BLANCO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "11",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CONCOLOR",
+            "PRESENTACIÓN": "CAJA 2K",
+            " COSTO ": " $ 9,160.00 ",
+            "COLOR": "BEIGE",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "12",
+            "DESCRIPICION": "PEGACOLOR CERÁMICO",
+            "MARCA": "PEGACOLOR",
+            "PRESENTACIÓN": "BULTO 25K",
+            " COSTO ": " $ 19,096.00 ",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES",
+            "NOTAS": "12 para Luisa para exhibición"
+        },
+        {
+            "id": "13",
+            "DESCRIPICION": "ALBACETE OCRE",
+            "MARCA": "STN",
+            "PRESENTACIÓN": "CAJA DE 12 UNIDADES",
+            "MEDIDA/UNID.": "25X50",
+            "PIEZAS/CAJA": "12",
+            "M2 X CAJA": "0.125",
+            "MTS2/CAJA": "1.5",
+            "COLOR": "OCRE",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 8 UNIDADES"
+        },
+        {
+            "id": "14",
+            "DESCRIPICION": "BRID DARK",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X55X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.165",
+            "MTS2/CAJA": "1.32",
+            "COLOR": "LADRILLO OSCURO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "15",
+            "DESCRIPICION": "BRID RED",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X55X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.165",
+            "MTS2/CAJA": "1.32",
+            "COLOR": "LADRILLO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 5 UNIDADES"
+        },
+        {
+            "id": "16",
+            "DESCRIPICION": "BRID WHITE",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X55X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.165",
+            "MTS2/CAJA": "1.32",
+            "COLOR": "LADRILLO CLARO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "17",
+            "DESCRIPICION": "CRONOS ZIGZAG",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X60X.92",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.18",
+            "MTS2/CAJA": "1.44",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CARAMICOS",
+            "NOTAS": "MAS UNA CAJA EXHIBICIÓN"
+        },
+        {
+            "id": "18",
+            "DESCRIPICION": "CUENCA STONE",
+            "MARCA": "STN",
+            "PRESENTACIÓN": "CAJA DE 12 UNIDADES",
+            "MEDIDA/UNID.": "25X50",
+            "PIEZAS/CAJA": "12",
+            "M2 X CAJA": "0.125",
+            "MTS2/CAJA": "1.5",
+            "COLOR": "LADRILLO CLARO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 5 UNIDADES"
+        },
+        {
+            "id": "19",
+            "DESCRIPICION": "LAJA MULTICOLOR",
+            "MARCA": "SNT",
+            "PRESENTACIÓN": "CAJA DE 12 UNIDADES",
+            "MEDIDA/UNID.": "25X50",
+            "PIEZAS/CAJA": "12",
+            "M2 X CAJA": "0.125",
+            "MTS2/CAJA": "1.5",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 5 UNIDADES --- DOS ROTAS"
+        },
+        {
+            "id": "20",
+            "DESCRIPICION": "LAJA RUSH",
+            "MARCA": "STN",
+            "PRESENTACIÓN": "CAJA DE 12 UNIDADES",
+            "MEDIDA/UNID.": "25X50",
+            "PIEZAS/CAJA": "12",
+            "M2 X CAJA": "0.125",
+            "MTS2/CAJA": "1.5",
+            "COLOR": "LADRILLO CLARO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 7 UNIDADES"
+        },
+        {
+            "id": "21",
+            "DESCRIPICION": "TESTACCIO NATURALE",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X58.5X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.175",
+            "MTS2/CAJA": "1.4",
+            "COLOR": "LADRILLO CLARO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 3 UNIDADES"
+        },
+        {
+            "id": "22",
+            "DESCRIPICION": "TESTACCIO ROSSO",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X58.5X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.175",
+            "MTS2/CAJA": "1.4",
+            "COLOR": "LADRILLO OSCURO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 3 UNIDADES"
+        },
+        {
+            "id": "23",
+            "DESCRIPICION": "TESTACCIO SABIA",
+            "MARCA": "VALENTIA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "30X58.5X.95",
+            "PIEZAS/CAJA": "8",
+            "M2 X CAJA": "0.175",
+            "MTS2/CAJA": "1.4",
+            "COLOR": "LADRILLO CLARO",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 3 UNIDADES"
+        },
+        {
+            "id": "24",
+            "DESCRIPICION": "OASIS GRANADA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 2 UNIDADES"
+        },
+        {
+            "id": "25",
+            "DESCRIPICION": "PEGANTE PORCELANATO",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BULTO 25K",
+            " COSTO ": " $ 13,500.00 ",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "26",
+            "DESCRIPICION": "ESPONJA ESPUMA",
+            "MARCA": "GENÉRICO",
+            "PRESENTACIÓN": "UNIDAD",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "27",
+            "DESCRIPICION": "ESTOPA",
+            "MARCA": "GENÉRICO",
+            "PRESENTACIÓN": "UNIDAD",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "28",
+            "DESCRIPICION": "PEGANTE CERÁMICO EXTERIOR",
+            "MARCA": "GOLDEN PLUS",
+            "PRESENTACIÓN": "BULTO 25K",
+            " COSTO ": " $ 12,900.00 ",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "29",
+            "DESCRIPICION": "PEGANTE PORCELANATO",
+            "MARCA": "GOLDEN PLUS",
+            "PRESENTACIÓN": "BULTO 25K",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "30",
+            "DESCRIPICION": "PEGANTE CERÁMICO INTERIOR",
+            "MARCA": "GOLDEN PLUS",
+            "PRESENTACIÓN": "BULTO 25K",
+            "MTS2/CAJA": "90",
+            " COSTO ": " $ 7,200.00 ",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES",
+            "NOTAS": "REVISAR REMISION 0882 CON LUISA SE SACARON 45",
+            "REMISIÓN": "17/07-0154",
+            "CANT.": "2"
+        },
+        {
+            "id": "31",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "BEIGE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "5"
+        },
+        {
+            "id": "32",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "BLANCO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "21"
+        },
+        {
+            "id": "33",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "GRIS OSCURO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "3"
+        },
+        {
+            "id": "34",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "GRIS NEVADO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "35",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "TABACO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "2"
+        },
+        {
+            "id": "36",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "LADRILLO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "4"
+        },
+        {
+            "id": "37",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "NEGRO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "3"
+        },
+        {
+            "id": "38",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "GRIS OSCURO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "5"
+        },
+        {
+            "id": "39",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "BLANCO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "25"
+        },
+        {
+            "id": "40",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "CHOCOLATE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "REMISIÓN": "17/07-0883",
+            "CANT.": "12"
+        },
+        {
+            "id": "41",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "13"
+        },
+        {
+            "id": "42",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "LADRILLO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "8"
+        },
+        {
+            "id": "43",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "TABACO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "14"
+        },
+        {
+            "id": "44",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "NEGRO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "22"
+        },
+        {
+            "id": "45",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "REMISIÓN": "17/070885",
+            "CANT.": "3"
+        },
+        {
+            "id": "46",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "CHOCOLATE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "4"
+        },
+        {
+            "id": "47",
+            "DESCRIPICION": "PEGANTE CERÁMICO ",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BULTO 25K",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "48",
+            "DESCRIPICION": "ZEUS NATURAL/CALIBREZ",
+            "MARCA": "CERÁMICA SCOP",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "51X51",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "49",
+            "DESCRIPICION": "SEPARADORES",
+            "MARCA": "GENÉRICO",
+            "PRESENTACIÓN": "BOLSA ",
+            "MEDIDA/UNID.": "3MM",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "50",
+            "DESCRIPICION": "SEPARADORES",
+            "MARCA": "GENÉRICO",
+            "PRESENTACIÓN": "BOLSA",
+            "MEDIDA/UNID.": "2MM",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "51",
+            "DESCRIPICION": "LISTON MULATA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 23 UNIDADES",
+            "MEDIDA/UNID.": "15X45X1",
+            "COLOR": "CAFÉ",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "52",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "REMISIÓN": "17/07-0885",
+            "CANT.": "17"
+        },
+        {
+            "id": "53",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 2K",
+            "COLOR": "GRIS CEMENTO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "54",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "CHOCOLATE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "3"
+        },
+        {
+            "id": "55",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "7"
+        },
+        {
+            "id": "56",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 5K",
+            "COLOR": "BEIGE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "5"
+        },
+        {
+            "id": "57",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "GRIS NEVADO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "12"
+        },
+        {
+            "id": "58",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "BLANCO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "59",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "CHOCOLATE",
+            "CATEGORÍA": "CONSUMIBLES",
+            "CANT.": "12"
+        },
+        {
+            "id": "60",
+            "DESCRIPICION": "DEL CONSTRUCTOR - LECHADA",
+            "MARCA": "DEL CONSTRUCTOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "GRIS OSCURO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "61",
+            "DESCRIPICION": "MURAL FRUTAL",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 2 UNIDADES",
+            "MEDIDA/UNID.": "25X47X.72",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "62",
+            "DESCRIPICION": "LISTON SALUT",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 17 UNIDADES",
+            "MEDIDA/UNID.": "13.5X43X.79",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "63",
+            "DESCRIPICION": "LISTON AGUA CLARA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 17 UNIDADES",
+            "MEDIDA/UNID.": "13.5X43X.79",
+            "COLOR": "AZUL",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "64",
+            "DESCRIPICION": "BASE DECORADA AXIS",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 10 UNIDADES",
+            "MEDIDA/UNID.": "30X45X.79",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "65",
+            "DESCRIPICION": "LISTON AMAPOLA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "15X45X.8",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "66",
+            "DESCRIPICION": "LISTON MARACAIBO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 20 UNIDADES",
+            "MEDIDA/UNID.": "15X45X1",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "67",
+            "DESCRIPICION": "LISTON ESPARTA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 20 UNIDADES",
+            "MEDIDA/UNID.": "15X45X1",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 9 UNIDADES + 16 BEIGE"
+        },
+        {
+            "id": "68",
+            "DESCRIPICION": "LISTON MONTECARLO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 20 UNIDADES",
+            "MEDIDA/UNID.": "15X45X1",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 8 UNIDADES"
+        },
+        {
+            "id": "69",
+            "DESCRIPICION": "BASE DECORADA CAPUCHINO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "30X60X.88",
+            "COLOR": "BEIGE",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "70",
+            "DESCRIPICION": "MURAL COLONNA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "30X60X.88",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "71",
+            "DESCRIPICION": "BASE DECORADA CHIPRE",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "20.5X60X1",
+            "COLOR": "NEGRO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "72",
+            "DESCRIPICION": "BASE DECORADA DOMINICA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "30X60X.92",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 2 UNIDADES"
+        },
+        {
+            "id": "73",
+            "DESCRIPICION": "MURAL CAZORLA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD ",
+            "MEDIDA/UNID.": "30X60X.92",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "74",
+            "DESCRIPICION": "BASE DECORADA COFFE TIME",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "30X60X,88",
+            "COLOR": "NEGRO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "75",
+            "DESCRIPICION": "BASE DECORADA BROOKLYN",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 6 UNIDADES",
+            "MEDIDA/UNID.": "30X60X.92",
+            "COLOR": "NEGRO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "76",
+            "DESCRIPICION": "BASE DECORADA VERANO",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 6 UNIDADES",
+            "COLOR": "MULTICOLOR",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "77",
+            "DESCRIPICION": "BALDOZA CERÁMICA ESMALTADA",
+            "MARCA": "EURO CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 8 UNIDADES",
+            "MEDIDA/UNID.": "32.3X56",
+            "COLOR": "BLANCO",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "78",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 2K",
+            "COLOR": "BLANCO ANTIGUO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "79",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 2K",
+            "COLOR": "GRIS CLARO",
+            "CATEGORÍA": "CONSUMIBLES",
+            "REMISIÓN": "1707-0881",
+            "CANT.": "2"
+        },
+        {
+            "id": "80",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "TABACO",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "81",
+            "DESCRIPICION": "BASE DECORADA CHIPRE",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "20.5X60X1",
+            "COLOR": "TAUPE",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 5 UNIDADES"
+        },
+        {
+            "id": "82",
+            "DESCRIPICION": "OASIS CRETA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 1 UNIDAD"
+        },
+        {
+            "id": "83",
+            "DESCRIPICION": "OASIS NAVARRA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "84",
+            "DESCRIPICION": "PRISMA CARRACA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "85",
+            "DESCRIPICION": "PRISMA CIANITA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "86",
+            "DESCRIPICION": "OASIS VIENA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS"
+        },
+        {
+            "id": "87",
+            "DESCRIPICION": "OASIS TROIA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 1 UNIDAD"
+        },
+        {
+            "id": "88",
+            "DESCRIPICION": "OASIS SEVILLA",
+            "MARCA": "SAVANE CERÁMICA",
+            "PRESENTACIÓN": "CAJA DE 9 UNIDADES",
+            "MEDIDA/UNID.": "31X54",
+            " COSTO ": " $ 37,000.00 ",
+            "CATEGORÍA": "CERAMICOS",
+            "NOTAS": "MAS 1 UNIDAD"
+        },
+        {
+            "id": "89",
+            "DESCRIPICION": "CONCOLOR PORCELANATO - LECHADA",
+            "MARCA": "CORONA",
+            "PRESENTACIÓN": "CAJA 5K",
+            " COSTO ": " $ 19,664.00 ",
+            "COLOR": "CHOCOLATE",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "90",
+            "DESCRIPICION": "MEGAPEGA PORCELANATO INTERIOR",
+            "MARCA": "MEGAPEGA",
+            "PRESENTACIÓN": "BULTO 25K",
+            "COLOR": "GRIS",
+            "CATEGORÍA": "CONSUMIBLES"
+        },
+        {
+            "id": "91",
+            "DESCRIPICION": "FACHADA PETRA GRAFITO MATE",
+            "MARCA": "PALO ROSA",
+            "PRESENTACIÓN": "MTR",
+            "MEDIDA/UNID.": "34X50",
+            "PIEZAS/CAJA": "6 UNIDADES X CAJA",
+            "M2 X CAJA": "1.02",
+            " COSTO ": " $ 41,899.90 ",
+            " PRECIO VENTA ": " $ 55,900.00 ",
+            " DESCUENTO 1 ": " $ 54,000.00 ",
+            "NOTAS": "más 4 unidades JuanPa partió dos unidades"
+        },
+        {
+            "id": "92",
+            "DESCRIPICION": "ORDINO MIX UNICO",
+            "MARCA": "PALO ROSA",
+            "PRESENTACIÓN": "UND",
+            "MEDIDA/UNID.": "34X50",
+            "PIEZAS/CAJA": "6 UNIDADES X CAJA",
+            "M2 X CAJA": "1.02",
+            " COSTO ": " $ 41,899.90 ",
+            " PRECIO VENTA ": " $ 55,900.00 ",
+            " DESCUENTO 1 ": " $ 54,900.00 "
+        },
+        {
+            "id": "93",
+            "DESCRIPICION": "FACHADA ANDRES NEGRO",
+            "MARCA": "PALO ROSA",
+            "PRESENTACIÓN": "UND",
+            "MEDIDA/UNID.": "34X50",
+            "PIEZAS/CAJA": "6 UNIDADES X CAJA",
+            "M2 X CAJA": "1.02",
+            " COSTO ": " $ 41,899.90 ",
+            " PRECIO VENTA ": " $ 55,900.00 ",
+            " DESCUENTO 1 ": " $ 54,900.00 ",
+            "NOTAS": "SE PRESTARON POR ORDEN DEL JEFE 3 CAJAS A SICHAR"
+        },
+        {
+            "id": "94",
+            "DESCRIPICION": "FACHADA ANDRES BLANCO",
+            "MARCA": "PALO ROSA",
+            "PRESENTACIÓN": "UND",
+            "MEDIDA/UNID.": "34X50",
+            "PIEZAS/CAJA": "6 UNIDADES X CAJA",
+            "M2 X CAJA": "1.02",
+            " COSTO ": " $ 41,899.90 ",
+            " PRECIO VENTA ": " $ 55,900.00 ",
+            " DESCUENTO 1 ": " $ 54,900.00 "
+        },
+        {
+            "id": "95",
+            "DESCRIPICION": "PARED BOTANICOCIMENTO",
+            "MARCA": "MEGAGRESS",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "45X90",
+            "PIEZAS/CAJA": "UNIDAD",
+            "M2 X CAJA": "0.4",
+            " COSTO ": " $ 17,910.54 ",
+            " PRECIO VENTA ": " $ -   ",
+            " DESCUENTO 1 ": " $ -   ",
+            "NOTAS": "1 UNIDAD EN CADA TIENDA, 1 EN BODEGA"
+        },
+        {
+            "id": "96",
+            "DESCRIPICION": "PARED PERLATO",
+            "MARCA": "MEGAGRESS",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "45X90",
+            "PIEZAS/CAJA": "UNIDAD",
+            "M2 X CAJA": "0.4",
+            " COSTO ": " $ 17,910.54 ",
+            " PRECIO VENTA ": " $ -   ",
+            " DESCUENTO 1 ": " $ -   "
+        },
+        {
+            "id": "97",
+            "DESCRIPICION": "PARED OXFORD",
+            "MARCA": "MEGAGRESS",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "45X90",
+            "PIEZAS/CAJA": "UNIDAD",
+            "M2 X CAJA": "0.4",
+            " COSTO ": " $ 17,910.54 ",
+            " PRECIO VENTA ": " $ -   ",
+            " DESCUENTO 1 ": " $ -   "
+        },
+        {
+            "id": "98",
+            "DESCRIPICION": "UNI PARED LEXUS",
+            "MARCA": "MEGAGRESS",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "45X90",
+            "PIEZAS/CAJA": "UNIDAD",
+            "M2 X CAJA": "0.4",
+            " COSTO ": " $ 17,910.54 ",
+            " PRECIO VENTA ": " $ -   ",
+            " DESCUENTO 1 ": " $ -   "
+        },
+        {
+            "id": "99",
+            "DESCRIPICION": "UNI PARED LOFT",
+            "MARCA": "MEGAGRESS",
+            "PRESENTACIÓN": "UNIDAD",
+            "MEDIDA/UNID.": "45X90",
+            "PIEZAS/CAJA": "UNIDAD",
+            "M2 X CAJA": "0.4",
+            " COSTO ": " $ 17,910.54 ",
+            " PRECIO VENTA ": " $ -   ",
+            " DESCUENTO 1 ": " $ -   "
+        },
+        {
+            "id": "100",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 2K",
+            "COLOR": "AZUL CLARO",
+            "CANT.": "5"
+        },
+        {
+            "id": "101",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 1K",
+            "COLOR": "BEIGE",
+            "CANT.": "8"
+        },
+        {
+            "id": "102",
+            "DESCRIPICION": "DURACOLOR - LECHADA",
+            "MARCA": "DURACOLOR",
+            "PRESENTACIÓN": "BOLSA 1K",
+            "COLOR": "BLANCO",
+            "CANT.": "6"
+        },
+        {
+            "id": "103",
+            "DESCRIPICION": "PEGA DE INTERIOR ",
+            "MARCA": "HOME GRUPO",
+            "PRESENTACIÓN": "BULTO 25K",
+            "COLOR": "GRIS",
+            "CANT.": "387"
+        }
+    ]

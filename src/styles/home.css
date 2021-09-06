@@ -1,0 +1,15 @@
+.homeComponent {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin-top: 50px;
+}
+
+.homeListContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 400px;
+    overflow: scroll;
+}

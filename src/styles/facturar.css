@@ -1,0 +1,21 @@
+.facturarComponent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.itemCantidad {
+    width: 80px;
+}
+
+.itemDescripcion {
+    width: 400px;
+}
+
+.itemPrecio {
+    width: 120px;
+}
+
+.itemTotal {
+    width: 120px
+} 
